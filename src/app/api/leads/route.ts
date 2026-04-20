@@ -51,7 +51,7 @@ export async function POST(request: Request) {
     // 3. Send Email Notification via Resend
     console.log('Resend API Key present:', !!process.env.RESEND_API_KEY);
     
-    if (process.env.RESEND_API_KEY) {
+    if (resend) {
       try {
         console.log('Attempting to send email via Resend...');
         const emailResponse = await resend.emails.send({
