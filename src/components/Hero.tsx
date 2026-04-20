@@ -45,34 +45,6 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-12 flex items-center gap-6">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-brand-navy bg-slate-200" />
-              ))}
-            </div>
-            <p className="text-sm text-slate-300">
-              <span className="text-white font-bold italic">5,000+</span> Home Renovations Completed in Ohio
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Hero Stats */}
-      <div className="absolute bottom-0 left-0 right-0 bg-white/5 backdrop-blur-xl border-t border-white/10 py-8 hidden lg:block">
-        <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <p className="text-xs font-bold text-brand-emerald uppercase tracking-widest mb-1">ROI Potential</p>
-            <p className="text-2xl font-black text-white">UP TO 98%</p>
-          </div>
-          <div>
-            <p className="text-xs font-bold text-brand-emerald uppercase tracking-widest mb-1">Local Experience</p>
-            <p className="text-2xl font-black text-white">52 YEARS</p>
-          </div>
-          <div>
-            <p className="text-xs font-bold text-brand-emerald uppercase tracking-widest mb-1">Project Warranty</p>
-            <p className="text-2xl font-black text-white">LIFETIME</p>
-          </div>
         </div>
       </div>
     </section>

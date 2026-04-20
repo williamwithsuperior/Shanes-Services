@@ -71,12 +71,15 @@ export default function Services() {
         </div>
 
         <div className="mt-20 text-center">
-          <div className="inline-flex items-center gap-2 bg-brand-navy text-white px-8 py-5 rounded-2xl font-bold shadow-2xl relative group cursor-pointer">
+          <a 
+            href="#calculator" 
+            className="inline-flex items-center gap-2 bg-brand-navy text-white px-8 py-5 rounded-2xl font-bold shadow-2xl relative group transition-all hover:scale-105 active:scale-95"
+          >
             <span className="absolute -top-3 -right-3 bg-brand-emerald p-2 rounded-full transform group-hover:scale-110 transition-transform">
               <CheckCircle2 className="w-4 h-4" />
             </span>
             Bundle more services and save even more! 🏡✨
-          </div>
+          </a>
         </div>
       </div>
     </section>
