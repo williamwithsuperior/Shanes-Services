@@ -36,6 +36,7 @@ export default function Footer() {
             <h4 className="font-black uppercase tracking-widest text-sm mb-8 text-brand-emerald">Quick Links</h4>
             <ul className="space-y-4 text-sm text-slate-300">
               <li><Link href="#services" className="hover:text-white transition-colors">Residential Services</Link></li>
+              <li><Link href="#gallery" className="hover:text-white transition-colors">Recent Transformations</Link></li>
               <li><Link href="#calculator" className="hover:text-white transition-colors">Equity Calculator</Link></li>
             </ul>
           </div>

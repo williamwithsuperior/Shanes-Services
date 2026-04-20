@@ -30,8 +30,8 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           <Link href="#services" className={`text-sm font-semibold transition-colors ${isScrolled ? 'text-brand-navy hover:text-brand-emerald' : 'text-white hover:text-brand-emerald'}`}>Services</Link>
+          <Link href="#gallery" className={`text-sm font-semibold transition-colors ${isScrolled ? 'text-brand-navy hover:text-brand-emerald' : 'text-white hover:text-brand-emerald'}`}>Recent Transformations</Link>
           <Link href="#calculator" className={`text-sm font-semibold transition-colors ${isScrolled ? 'text-brand-navy hover:text-brand-emerald' : 'text-white hover:text-brand-emerald'}`}>ROI Calculator</Link>
-
         </div>
 
         <div className="flex items-center gap-4">

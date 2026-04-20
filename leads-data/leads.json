@@ -1,0 +1,42 @@
+[
+  {
+    "service": "Roof",
+    "sqft": "2500",
+    "condition": "Active Leaking/Damage",
+    "zip": "45202",
+    "email": "test@example.com",
+    "source": "SmartBot",
+    "message": "Project: Roof, SqFt: 2500, Condition: Active Leaking/Damage, Zip: 45202",
+    "timestamp": "2026-04-20T03:14:42.513Z"
+  },
+  {
+    "name": "Smart Assistant Lead",
+    "phone": "5135550199",
+    "email": "bot@shanesexteriors.com",
+    "preferredStartDate": "Active Leaking/Damage",
+    "serviceInterested": "Windows",
+    "estimatedCost": 0,
+    "estimatedROI": 0,
+    "propertySpecs": {
+      "zip": "45202",
+      "dimension": "10 Windows"
+    },
+    "source": "SmartBot",
+    "timestamp": "2026-04-20T03:21:03.208Z"
+  },
+  {
+    "name": "Smart Assistant Lead",
+    "phone": "5138047644",
+    "email": "bot@shanesexteriors.com",
+    "preferredStartDate": "Aesthetic Upgrade",
+    "serviceInterested": "Roof",
+    "estimatedCost": 0,
+    "estimatedROI": 0,
+    "propertySpecs": {
+      "zip": "45067",
+      "dimension": "1250 SqFt"
+    },
+    "source": "SmartBot",
+    "timestamp": "2026-04-20T03:40:38.307Z"
+  }
+]
