@@ -37,7 +37,7 @@ export default function CalculatorWrapper() {
         </div>
 
         <div className="mt-12 text-center text-slate-400 text-sm">
-          <p>*Estimates provided are for informational purposes. Final quotes require an on-site inspection by a certified Superior Products technician.</p>
+          <p>*Estimates provided are for informational purposes. Final quotes require an on-site inspection by Shane.</p>
         </div>
       </div>
     </section>

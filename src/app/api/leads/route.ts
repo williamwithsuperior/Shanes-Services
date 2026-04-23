@@ -10,7 +10,9 @@ import LeadEmail from '@/components/LeadEmail';
  * Now also sends an email notification via Resend.
  */
 export async function POST(request: Request) {
-  const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+  const resendKey = process.env.RESEND_API_KEY;
+  const hasValidResendKey = resendKey && resendKey !== 'your_resend_api_key_here';
+  const resend = hasValidResendKey ? new Resend(resendKey) : null;
   try {
     const data = await request.json();
     

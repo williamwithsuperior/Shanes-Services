@@ -338,27 +338,28 @@ function CalculatorContent() {
             const Icon = service.icon;
             const isActive = selectedServices.includes(key);
             return (
-              <button
-                key={key}
-                onClick={() => toggleService(key)}
-                className={`flex flex-col items-center p-4 rounded-xl border-2 transition-all duration-200 ${
-                  isActive 
-                    ? 'border-brand-emerald bg-emerald-50 text-brand-navy shadow-md' 
-                    : 'border-slate-200 bg-white hover:border-slate-300 text-slate-500'
-                }`}
-              >
-                <div className="relative">
-                  <Icon className={`w-8 h-8 mb-2 ${isActive ? 'text-brand-emerald' : ''}`} />
-                  {isActive && (
-                    <div className="absolute -top-1 -right-1 bg-brand-emerald text-white p-0.5 rounded-full">
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                  )}
-                </div>
-                <span className="font-semibold text-sm">{service.name}</span>
-              </button>
+              <div key={key} className="flex flex-col gap-2">
+                <button
+                  onClick={() => toggleService(key)}
+                  className={`flex flex-col items-center p-4 rounded-xl border-2 transition-all duration-200 w-full ${
+                    isActive 
+                      ? 'border-brand-emerald bg-emerald-50 text-brand-navy shadow-md' 
+                      : 'border-slate-200 bg-white hover:border-slate-300 text-slate-500'
+                  }`}
+                >
+                  <div className="relative">
+                    <Icon className={`w-8 h-8 mb-2 ${isActive ? 'text-brand-emerald' : ''}`} />
+                    {isActive && (
+                      <div className="absolute -top-1 -right-1 bg-brand-emerald text-white p-0.5 rounded-full">
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                  <span className="font-semibold text-sm">{service.name}</span>
+                </button>
+              </div>
             );
           })}
         </div>

@@ -8,28 +8,36 @@ const SERVICES = [
     description: 'Protect your biggest investment with architectural shingles designed for Cincinnati’s unpredictable weather. Guaranteed for a lifetime.',
     icon: Shield,
     benefits: ['Wind Resistant', 'Fire Rated', 'Lifetime Material Warranty'],
-    roi: '82% ROI'
+    roi: '82% ROI',
+    cta: 'Secure My Roof Today',
+    color: 'bg-blue-600'
   },
   {
     title: 'Insulated Siding',
     description: 'Transform your curb appeal and slash energy costs with premium moisture-resistant siding tailored for long-term durability.',
     icon: Home,
     benefits: ['Energy Efficient', 'Low Maintenance', 'Fade Resistant'],
-    roi: '98% ROI'
+    roi: '98% ROI',
+    cta: 'Boost My Curb Appeal',
+    color: 'bg-emerald-600'
   },
   {
     title: 'Energy-Star Windows',
     description: 'Stop heat loss with custom-fit, double-pane vinyl windows. Clearer views, lower bills, and maximum home security.',
     icon: Maximize,
     benefits: ['UV Protection', 'Noise Reduction', 'Enhanced Security'],
-    roi: '88% ROI'
+    roi: '88% ROI',
+    cta: 'Lower My Energy Bills',
+    color: 'bg-cyan-600'
   },
   {
     title: 'Seamless Gutters',
     description: 'Our custom aluminum systems manage heavy rainfall effortlessly, preventing foundation damage and landscape erosion.',
     icon: Droplets,
     benefits: ['Clog-Free Options', 'Heavy-Duty Brackets', 'Perfect Transitions'],
-    roi: '72% ROI'
+    roi: '72% ROI',
+    cta: 'Protect My Foundation',
+    color: 'bg-indigo-600'
   }
 ];
 
@@ -47,7 +55,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {SERVICES.map((service, index) => (
-            <div key={index} className="glass-card bg-white border border-slate-200 group hover:border-brand-emerald transition-all duration-500">
+            <div key={index} className="glass-card bg-white border border-slate-200 group hover:border-brand-emerald transition-all duration-500 flex flex-col h-full">
               <div className="bg-slate-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-brand-navy group-hover:bg-brand-emerald group-hover:text-white transition-all duration-500">
                 <service.icon className="w-8 h-8" />
               </div>
@@ -58,7 +66,7 @@ export default function Services() {
               <p className="text-sm text-slate-500 leading-relaxed mb-6">
                 {service.description}
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-8">
                 {service.benefits.map((benefit, bIdx) => (
                   <li key={bIdx} className="flex items-center gap-2 text-xs font-bold text-brand-navy">
                     <CheckCircle2 className="w-4 h-4 text-brand-emerald" />
@@ -66,6 +74,15 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-auto pt-6 border-t border-slate-50">
+                <a 
+                  href="#calculator"
+                  className={`block text-center ${service.color} text-white py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg`}
+                >
+                  {service.cta}
+                  <span className="block text-[8px] opacity-70 mt-1">Get Free {service.title.split(' ').pop()} Quote/Inspection</span>
+                </a>
+              </div>
             </div>
           ))}
         </div>

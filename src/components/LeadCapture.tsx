@@ -21,12 +21,13 @@ export default function LeadCapture({
     setStatus('submitting');
     
     const formData = new FormData(e.currentTarget);
+    const selectedServices = formData.getAll('services');
     const leadData = {
       name: formData.get('name'),
       phone: formData.get('phone'),
       email: formData.get('email'),
       preferredStartDate: formData.get('startDate'),
-      serviceInterested: service,
+      serviceInterested: selectedServices.length > 0 ? selectedServices.join(', ') : service,
       estimatedCost: projectCost,
       estimatedROI: addedValue,
       propertySpecs: propertyData,
@@ -64,7 +65,7 @@ export default function LeadCapture({
   }
 
   return (
-    <div className="glass-card border-t-4 border-t-emerald-500 shadow-xl bg-white">
+    <div id="lead-capture" className="glass-card border-t-4 border-t-emerald-500 shadow-xl bg-white">
       <div className="mb-6 text-center">
         <h3 className="text-xl font-extrabold text-brand-navy mb-1">Get My Guaranteed Quote</h3>
         <p className="text-sm text-slate-500">Lock in 2026 rates for your {service} project today.</p>
@@ -88,8 +89,26 @@ export default function LeadCapture({
         </div>
 
         <div>
+          <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">Services Interested In</label>
+          <div className="grid grid-cols-2 gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
+            {['Roofing', 'Siding', 'Windows', 'Gutters'].map((item) => (
+              <label key={item} className="flex items-center gap-2 text-xs font-bold text-brand-navy cursor-pointer group">
+                <input 
+                  type="checkbox" 
+                  name="services" 
+                  value={item} 
+                  defaultChecked={service.includes(item)}
+                  className="w-4 h-4 rounded border-slate-300 text-emerald-500 focus:ring-emerald-500 transition-all cursor-pointer" 
+                />
+                <span className="group-hover:text-emerald-600 transition-colors">{item}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div>
           <label className="block text-xs font-semibold text-slate-600 uppercase tracking-wider mb-1">Preferred Start Date</label>
-          <select required name="startDate" className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-500 outline-none bg-white text-slate-900">
+          <select required name="startDate" className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:ring-2 focus:ring-emerald-500 outline-none bg-white text-slate-900 font-medium">
             <option value="">Select a timeframe...</option>
             <option value="ASAP">As soon as possible</option>
             <option value="1_month">Within 1 month</option>
@@ -108,7 +127,7 @@ export default function LeadCapture({
         </button>
         
         <p className="text-[10px] text-center text-slate-400 mt-3">
-          By submitting, you agree to receive communications from Superior Products-Exteriors.
+          By submitting, you agree to receive communications from Shane.
         </p>
       </form>
     </div>

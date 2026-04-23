@@ -26,7 +26,7 @@ export default function Hero() {
             <span className="text-brand-emerald font-bold text-sm tracking-wide">Proudly Serving Cincinnati to Dayton Homeowners</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight">
             How Much More Is Your <span className="text-brand-emerald">Home Worth</span> Today?
           </h1>
           

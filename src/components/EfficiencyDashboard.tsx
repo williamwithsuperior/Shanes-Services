@@ -119,22 +119,22 @@ export default function EfficiencyDashboard() {
           
           {/* Service Selector Tabs */}
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-             {(['Roofing', 'Siding', 'Windows', 'Gutters'] as ServiceCategory[]).map(cat => {
-               const Icon = cat === 'Roofing' ? Shield : cat === 'Siding' ? Home : cat === 'Windows' ? Maximize : Droplets;
-               return (
-                 <button
-                   key={cat}
-                   onClick={() => {
-                     setCurrentService(cat);
-                     setActiveTab('solution');
-                   }}
-                   className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-bold transition-all border-2 ${currentService === cat ? 'bg-brand-emerald border-brand-emerald text-brand-navy shadow-xl scale-105' : 'bg-transparent border-brand-white/10 text-slate-400 hover:border-brand-white/30'}`}
-                 >
-                   <Icon className="w-5 h-5" />
-                   {cat}
-                 </button>
-               )
-             })}
+              {(['Roofing', 'Siding', 'Windows', 'Gutters'] as ServiceCategory[]).map(cat => {
+                const Icon = cat === 'Roofing' ? Shield : cat === 'Siding' ? Home : cat === 'Windows' ? Maximize : Droplets;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => {
+                      setCurrentService(cat);
+                      setActiveTab('solution');
+                    }}
+                    className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-bold transition-all border-2 ${currentService === cat ? 'bg-brand-emerald border-brand-emerald text-brand-navy shadow-xl scale-105' : 'bg-transparent border-brand-white/10 text-slate-400 hover:border-brand-white/30'}`}
+                  >
+                    <Icon className="w-5 h-5" />
+                    {cat}
+                  </button>
+                )
+              })}
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export default function EfficiencyDashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-2">
             
             {/* Infographic Visual Area */}
-            <div className="relative h-[400px] lg:h-auto bg-slate-800/50 p-8 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-brand-white/10 overflow-hidden">
+            <div className="relative h-[300px] md:h-[400px] lg:h-auto bg-slate-800/50 p-6 md:p-8 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-brand-white/10 overflow-hidden">
               <div className="absolute top-8 left-8">
                 <div className="flex items-center gap-2 bg-brand-navy/80 backdrop-blur-md px-4 py-2 rounded-full border border-brand-white/10 z-20">
                   <Gauge className="w-4 h-4 text-brand-emerald" />

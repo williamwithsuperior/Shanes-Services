@@ -14,11 +14,18 @@ export async function GET(request: Request) {
   const rapidHost = process.env.RAPIDAPI_HOST;
   const rapidKey = process.env.RAPIDAPI_KEY;
 
-  if (!rapidKey || !rapidHost) {
-    return NextResponse.json(
-      { error: 'API keys are not all configured. Please ensure RAPIDAPI_HOST and RAPIDAPI_KEY are configured.' },
-      { status: 500 }
-    );
+  if (!rapidKey || !rapidHost || rapidKey === 'your_rapidapi_key_here') {
+    console.warn('API keys are not configured. Returning mock data for local development.');
+    // Return mock data so the calculator works locally without API keys
+    return NextResponse.json({
+      address: address,
+      propertyType: 'Single Family',
+      squareFootage: 2000,
+      yearBuilt: 1995,
+      currentValue: 350000,
+      beds: 3,
+      baths: 2,
+    });
   }
 
   try {
